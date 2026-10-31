@@ -16,7 +16,7 @@ export default function Customers() {
             setLoading(true);
             const token = localStorage.getItem("adminToken");
 
-            const res = await axios.get("http://localhost:3000/users/customers", {
+            const res = await axios.get("https://shirt-backend-33gt.onrender.com/users/customers", {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     token: token,
@@ -64,7 +64,7 @@ export default function Customers() {
             const token = localStorage.getItem("adminToken");
 
             await axios.patch(
-                `http://localhost:3000/users/customer-status/${id}`,
+                `https://shirt-backend-33gt.onrender.com/users/customer-status/${id}`,
                 { isActive: !currentStatus },
                 {
                     headers: {

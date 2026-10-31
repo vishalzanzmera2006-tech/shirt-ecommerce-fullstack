@@ -59,7 +59,7 @@ const AllProducts = () => {
     const getData = async (showToast = false) => {
         try {
             setLoading(true);
-            const res = await axios.get("http://localhost:3000/shirt/showAll");
+            const res = await axios.get("https://shirt-backend-33gt.onrender.com/shirt/showAll");
             setdata(res.data.data || []);
             if (showToast) {
                 toast.success("Inventory synchronized");
@@ -88,7 +88,7 @@ const AllProducts = () => {
 
         const token = localStorage.getItem("adminToken");
         try {
-            await axios.delete(`http://localhost:3000/shirt/delete?id=${id}`, {
+            await axios.delete(`https://shirt-backend-33gt.onrender.com/shirt/delete?id=${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     token: token,
@@ -219,7 +219,7 @@ const AllProducts = () => {
                                 <div className="row-image-box">
                                     {coverImage ? (
                                         <img
-                                            src={`http://localhost:3000/images/productimages/${coverImage}`}
+                                            src={`https://shirt-backend-33gt.onrender.com/images/productimages/${coverImage}`}
                                             alt={product.name}
                                             className="row-img"
                                         />
@@ -395,7 +395,7 @@ const AllProducts = () => {
 
                                         const token = localStorage.getItem("adminToken");
                                         const res = await axios.patch(
-                                            `http://localhost:3000/shirt/updateOne?id=${selectedProduct._id}`,
+                                            `https://shirt-backend-33gt.onrender.com/shirt/updateOne?id=${selectedProduct._id}`,
                                             formData,
                                             {
                                                 headers: {
@@ -484,7 +484,7 @@ const AllProducts = () => {
                                                     <div className="current-image-card">
                                                         {selectedProduct.mainimage ? (
                                                             <img
-                                                                src={`http://localhost:3000/images/productimages/${selectedProduct.mainimage}`}
+                                                                src={`https://shirt-backend-33gt.onrender.com/images/productimages/${selectedProduct.mainimage}`}
                                                                 alt="Main Image"
                                                                 className="current-preview-img"
                                                             />
@@ -501,7 +501,7 @@ const AllProducts = () => {
                                                         selectedProduct.previewimages.map((imgName, index) => (
                                                             <div className="current-image-card" key={index}>
                                                                 <img
-                                                                    src={`http://localhost:3000/images/productimages/${imgName}`}
+                                                                    src={`https://shirt-backend-33gt.onrender.com/images/productimages/${imgName}`}
                                                                     alt={`Preview ${index + 1}`}
                                                                     className="current-preview-img"
                                                                 />

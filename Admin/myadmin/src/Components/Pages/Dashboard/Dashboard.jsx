@@ -163,7 +163,7 @@ const Dashboard = () => {
         const fetchStats = async () => {
             try {
                 setLoadingCount(true);
-                const res = await axios.get("http://localhost:3000/shirt/showAll");
+                const res = await axios.get("https://shirt-backend-33gt.onrender.com/shirt/showAll");
                 setProductCount(res.data?.data?.length || 0);
             } catch (err) {
                 console.error("Error fetching product counts:", err);

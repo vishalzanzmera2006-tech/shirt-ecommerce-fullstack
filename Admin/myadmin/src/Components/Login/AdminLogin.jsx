@@ -41,7 +41,7 @@ export default function AdminLogin() {
                         setErrorMsg("");
                         setLoading(true);
                         try {
-                            const res = await axios.post("http://localhost:3000/admin/login", values);
+                            const res = await axios.post("https://shirt-backend-33gt.onrender.com/admin/login", values);
 
                             // Save Tokens
                             localStorage.setItem("adminToken", res.data.token);

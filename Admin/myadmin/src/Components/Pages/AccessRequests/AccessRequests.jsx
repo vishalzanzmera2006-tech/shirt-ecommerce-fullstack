@@ -14,7 +14,7 @@ const AccessRequests = () => {
     const fetchRequests = async () => {
         try {
             setLoading(true);
-            const res = await axios.get("http://localhost:3000/accessrequest/allrequests");
+            const res = await axios.get("https://shirt-backend-33gt.onrender.com/accessrequest/allrequests");
             if (res.data.success) {
                 setRequests(res.data.data || []);
             }
@@ -42,7 +42,7 @@ const AccessRequests = () => {
         if (!window.confirm("Are you sure you want to remove this request?")) return;
 
         try {
-            const res = await axios.delete("http://localhost:3000/accessrequest/delete/accessrequest", {
+            const res = await axios.delete("https://shirt-backend-33gt.onrender.com/accessrequest/delete/accessrequest", {
                 data: { id: id }
             });
 

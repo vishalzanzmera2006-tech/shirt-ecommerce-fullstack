@@ -29,7 +29,7 @@ const Orders = () => {
 
         try {
             setLoading(true);
-            const res = await axios.get("http://localhost:3000/order/admin/all", {
+            const res = await axios.get("https://shirt-backend-33gt.onrender.com/order/admin/all", {
                 headers: { token: token }
             });
 
@@ -65,7 +65,7 @@ const Orders = () => {
 
         try {
             const res = await axios.put(
-                "http://localhost:3000/order/admin/status-update",
+                "https://shirt-backend-33gt.onrender.com/order/admin/status-update",
                 {
                     orderId: orderId,
                     orderStatus: newStatus,
@@ -118,7 +118,7 @@ const Orders = () => {
 
         if (!imgName) return "https://placehold.co/80x100?text=Shirt";
         if (imgName.startsWith("http")) return imgName;
-        return `http://localhost:3000/images/productimages/${imgName}`;
+        return `https://shirt-backend-33gt.onrender.com/images/productimages/${imgName}`;
     };
 
     // Filter & Search Logic

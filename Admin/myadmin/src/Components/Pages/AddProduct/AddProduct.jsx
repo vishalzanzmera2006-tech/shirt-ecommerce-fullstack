@@ -101,7 +101,7 @@ const AddProduct = () => {
                         const token = localStorage.getItem("adminToken");
 
                         await axios.post(
-                            "http://localhost:3000/shirt/create",
+                            "https://shirt-backend-33gt.onrender.com/shirt/create",
                             formData,
                             {
                                 headers: {

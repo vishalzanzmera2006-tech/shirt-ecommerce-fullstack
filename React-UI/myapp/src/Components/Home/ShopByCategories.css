@@ -1,0 +1,407 @@
+/* SHOP BY CATEGORIES */
+
+.shop-categories {
+    width: 100%;
+    padding: 30px 5vw 70px;
+    box-sizing: border-box;
+
+    color: #fff;
+    color: #111;
+
+    overflow: hidden;
+}
+
+
+/* HEADER */
+
+.shop-categories-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.categories-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: #777;
+}
+
+.categories-title-area h2 {
+    margin: 0 0 10px;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: clamp(32px, 4.5vw, 48px);
+    font-weight: 400;
+
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+
+    color: #111;
+}
+
+.categories-title-area h2 span {
+    font-style: italic;
+}
+
+.categories-subtitle {
+    max-width: 460px;
+
+    margin: 0 auto;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    color: #777;
+}
+
+
+/* GRID */
+
+.categories-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.25fr 0.85fr 0.85fr;
+
+    grid-template-rows:
+        430px 360px;
+
+    gap: 16px;
+}
+
+.categories-grid>div {
+    min-width: 0;
+    min-height: 0;
+}
+
+
+/* CARD SIZES */
+
+.categories-grid>div:has(.category-card.large) {
+    grid-row: span 2;
+}
+
+.categories-grid>div:has(.category-card.wide) {
+    grid-column: 2 / 4;
+}
+
+
+/* CARD */
+
+.category-card {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #050505;
+    color: #fff;
+
+    cursor: pointer;
+}
+
+
+/* IMAGE */
+
+.category-image {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+}
+
+.category-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: scale(1.01);
+
+    transition:
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-card:hover .category-image img {
+    transform: scale(1.08);
+}
+
+
+/* OVERLAY */
+
+.category-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.05) 20%,
+            rgba(0, 0, 0, 0.82) 100%);
+
+    transition: opacity 0.5s ease;
+}
+
+.category-card:hover .category-overlay {
+    opacity: 0.92;
+}
+
+
+/* CONTENT */
+
+.category-content {
+    position: absolute;
+
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+
+    z-index: 4;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.category-text {
+    min-width: 0;
+}
+
+
+/* TITLE */
+
+.category-text h3 {
+    margin: 0;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: clamp(40px, 4vw, 70px);
+    font-weight: 400;
+
+    line-height: 0.85;
+    letter-spacing: -3px;
+
+    color: #fff;
+}
+
+
+/* DESCRIPTION */
+
+.category-text p {
+    max-width: 270px;
+
+    margin: 14px 0 0;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* ARROW */
+
+.category-arrow {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+
+    font-size: 20px;
+
+    color: #fff;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-card:hover .category-arrow {
+    background: #fff;
+    color: #111;
+
+    transform:
+        rotate(45deg) scale(1.08);
+}
+
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .shop-categories {
+        padding: 90px 4vw 60px;
+    }
+
+    .shop-categories-header {
+        margin-bottom: 45px;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows:
+            470px 350px 350px;
+
+        gap: 14px;
+    }
+
+    .categories-grid>div:has(.category-card.large) {
+        grid-row: span 1;
+    }
+
+    .categories-grid>div:has(.category-card.wide) {
+        grid-column: span 2;
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .shop-categories {
+        padding: 75px 20px 45px;
+    }
+
+    .shop-categories-header {
+        margin-bottom: 35px;
+    }
+
+    .categories-label {
+        margin-bottom: 10px;
+
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .categories-title-area h2 {
+        font-size: 34px;
+        letter-spacing: -1px;
+    }
+
+    .categories-subtitle {
+        max-width: 400px;
+
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+
+        grid-template-rows:
+            480px 360px 360px 360px;
+
+        gap: 12px;
+    }
+
+    .categories-grid>div:has(.category-card.large),
+    .categories-grid>div:has(.category-card.wide) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .category-content {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+
+        gap: 15px;
+    }
+
+    .category-text h3 {
+        font-size: 46px;
+        letter-spacing: -2px;
+    }
+
+    .category-text p {
+        max-width: 220px;
+
+        margin-top: 12px;
+
+        font-size: 9px;
+    }
+
+    .category-arrow {
+        width: 42px;
+        height: 42px;
+
+        font-size: 17px;
+    }
+
+    .categories-footer {
+        margin-top: 20px;
+
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 420px) {
+
+    .shop-categories {
+        padding: 65px 15px 40px;
+    }
+
+    .categories-title-area h2 {
+        font-size: 32px;
+    }
+
+    .categories-subtitle {
+        font-size: 12px;
+    }
+
+    .categories-grid {
+        grid-template-rows:
+            420px 330px 330px 330px;
+    }
+
+    .category-text h3 {
+        font-size: 40px;
+    }
+
+    .category-text p {
+        max-width: 185px;
+    }
+}

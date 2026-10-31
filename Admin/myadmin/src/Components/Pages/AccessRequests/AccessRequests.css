@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+.light-admin-root {
+    background-color: #f8fafc;
+    color: #0f172a;
+    min-height: 100vh;
+    padding: 36px 44px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Header */
+.light-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 22px;
+    gap: 16px;
+}
+
+.light-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #e2e8f0;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #475569;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.light-pill-dot {
+    width: 6px;
+    height: 6px;
+    background: #10b981;
+    border-radius: 50%;
+}
+
+.light-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.light-subtitle {
+    margin: 6px 0 0 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.light-header-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.light-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    padding: 9px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.light-btn-secondary:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+}
+
+.light-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #0f172a;
+    border: 1px solid #0f172a;
+    color: #ffffff;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.light-btn-primary:hover {
+    background: #1e293b;
+}
+
+/* Metric Cards */
+.light-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.light-metric-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px 22px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.metric-heading {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 6px 0;
+}
+
+.text-accent {
+    color: #10b981;
+}
+
+.metric-subtext {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* Search / Toolbar */
+.light-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 12px;
+}
+
+.light-search-box {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 8px 14px;
+    width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.search-icon-svg {
+    color: #94a3b8;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.light-search-input {
+    border: none;
+    outline: none;
+    font-size: 13px;
+    width: 100%;
+    color: #0f172a;
+    font-family: inherit;
+    background: transparent;
+}
+
+.light-search-input::placeholder {
+    color: #94a3b8;
+}
+
+.clear-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0 4px;
+}
+
+.clear-btn:hover {
+    color: #0f172a;
+}
+
+.light-count-info {
+    font-size: 13px;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.light-count-info strong {
+    color: #0f172a;
+}
+
+/* Table Card */
+.light-table-wrapper {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.light-table {
+    width: 100%;
+    min-width: 650px; /* Mobile par horizontal scroll protect karne ke liye */
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.light-table thead th {
+    background: #f8fafc;
+    color: #475569;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 14px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.ref-head-cell {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.light-table-row {
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.15s ease;
+}
+
+.light-table-row:hover {
+    background: #f8fafc;
+}
+
+.ref-number {
+    padding: 16px 20px;
+    font-family: 'JetBrains+Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.email-cell {
+    padding: 16px 20px;
+    word-break: break-all;
+}
+
+.email-value {
+    color: #0f172a;
+    font-weight: 500;
+}
+
+.date-cell {
+    padding: 16px 20px;
+    color: #64748b;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* Actions */
+.action-buttons-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 14px 20px;
+    white-space: nowrap;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.copy-btn {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+}
+
+.copy-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.copied-icon {
+    color: #10b981;
+}
+
+.delete-btn {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+}
+
+.delete-btn:hover {
+    background: #fee2e2;
+    border-color: #fca5a5;
+    color: #b91c1c;
+}
+
+/* State / Empty Views */
+.light-state-box {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.light-spinner {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #e2e8f0;
+    border-top-color: #0f172a;
+    border-radius: 50%;
+    margin: 0 auto 12px auto;
+    animation: spin 0.8s linear infinite;
+}
+
+.spin-icon {
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.empty-symbol {
+    font-size: 24px;
+    color: #cbd5e1;
+    margin-bottom: 8px;
+}
+
+.light-state-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.empty-desc {
+    margin: 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* ========================================================
+   MEDIA QUERIES (TABLET & MOBILE RESPONSIVE)
+   ======================================================== */
+
+/* Tablet (Max 992px) */
+@media screen and (max-width: 992px) {
+    .light-admin-root {
+        padding: 24px 20px;
+    }
+
+    .light-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile & Small Tablets (Max 768px) */
+@media screen and (max-width: 768px) {
+    .light-admin-root {
+        padding: 20px 14px;
+    }
+
+    .light-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .light-header-actions {
+        width: 100%;
+        display: flex;
+    }
+
+    .light-header-actions button {
+        flex: 1;
+    }
+
+    .light-title {
+        font-size: 22px;
+    }
+
+    .light-metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .light-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .light-search-box {
+        width: 100%;
+    }
+
+    .light-count-info {
+        text-align: right;
+        font-size: 12px;
+    }
+}
+
+/* Small Mobile Screens (Max 480px) */
+@media screen and (max-width: 480px) {
+    .light-title {
+        font-size: 20px;
+    }
+
+    .light-subtitle {
+        font-size: 12px;
+    }
+
+    .light-btn-secondary,
+    .light-btn-primary {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}

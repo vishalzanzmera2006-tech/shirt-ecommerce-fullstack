@@ -1,0 +1,117 @@
+.why-us {
+    width: 100%;
+    padding: 100px 5vw 90px;
+    background: #f7f7f5;
+    color: #111;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.why-header {
+    max-width: 680px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.why-header h2 {
+    margin: 0 0 15px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -1.5px;
+}
+
+.why-header h2 span {
+    font-style: italic;
+}
+
+.why-header p {
+    max-width: 470px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #777;
+}
+
+.why-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.why-item {
+    padding-top: 18px;
+    border-top: 1px solid #d2d2ce;
+    transition: border-color 0.3s ease;
+}
+
+.why-item:hover {
+    border-top-color: #111;
+}
+
+.why-number {
+    display: block;
+    margin-bottom: 16px;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-style: italic;
+    color: #888;
+}
+
+.why-item h3 {
+    margin: 0 0 10px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.why-item p {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.65;
+    color: #666;
+}
+
+@media (max-width: 1024px) {
+    .why-features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .why-us {
+        padding: 70px 20px 60px;
+    }
+
+    .why-header {
+        margin-bottom: 45px;
+    }
+
+    .why-header h2 {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
+
+    .why-header p {
+        font-size: 12px;
+    }
+
+    .why-features {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
+@media (max-width: 400px) {
+    .why-header h2 {
+        font-size: 36px;
+    }
+}

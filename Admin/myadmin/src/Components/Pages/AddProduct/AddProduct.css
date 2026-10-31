@@ -1,0 +1,526 @@
+/* =========================================
+   CONTAINER & WRAPPER
+========================================= */
+
+.add-product {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/* Header */
+.add-header {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 0;
+    margin-bottom: 24px;
+    gap: 16px;
+}
+
+.add-header h1 {
+    margin-top: 4px;
+    margin-bottom: 0;
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: #111;
+    line-height: 1.2;
+}
+
+.add-header span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #777;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.add-header p {
+    font-size: 13px;
+    color: #777;
+    margin: 0;
+}
+
+/* =========================================
+   FORM SECTIONS
+========================================= */
+
+.product-form {
+    width: 100%;
+}
+
+.form-section {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.form-section h2 {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 12px;
+}
+
+/* Grid Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #222;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid #d5d5d5;
+    border-radius: 6px;
+    outline: none;
+    background: #fff;
+    font-size: 13px;
+    color: #111;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-group small {
+    color: #888;
+    font-size: 11px;
+}
+
+.optional-tag {
+    font-size: 11px;
+    font-weight: 400;
+    color: #94a3b8;
+    margin-left: 4px;
+}
+
+/* =========================================
+   IMAGE UPLOAD & PREVIEW
+========================================= */
+
+.image-upload {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    min-height: 140px;
+    padding: 24px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+    position: relative;
+    background: #fafafa;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.image-upload:hover {
+    background: #f4f4f4;
+    border-color: #999;
+}
+
+.image-upload input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.image-upload strong {
+    font-size: 13px;
+    font-weight: 600;
+    color: #222;
+}
+
+.image-upload span {
+    color: #777;
+    font-size: 11px;
+    max-width: 90%;
+}
+
+.image-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.preview-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1.1;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    background: #fafafa;
+}
+
+.preview-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.badge-tag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 9px;
+    text-align: center;
+    padding: 4px 2px;
+    letter-spacing: 0.5px;
+}
+
+.remove-img-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #ef4444;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease;
+    z-index: 2;
+}
+
+.remove-img-btn:hover {
+    background: #dc2626;
+}
+
+/* =========================================
+   TEXTAREA (DESCRIPTION)
+========================================= */
+
+.form-group.full textarea {
+    width: 100%;
+    min-height: 130px;
+    padding: 12px 14px;
+    border: 1px solid #d5d5d5;
+    border-radius: 6px;
+    background: #fff;
+    color: #111;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.5;
+    resize: vertical;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group.full textarea:focus {
+    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================
+   SELECTIONS & CHECKBOXES
+========================================= */
+
+.size-box,
+.badge-options {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.size-box label,
+.badge-options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 8px 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    user-select: none;
+    transition: all 0.15s ease;
+}
+
+.size-box label:hover,
+.badge-options label:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.size-box input[type="checkbox"],
+.badge-options input[type="radio"] {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    accent-color: #000;
+    margin: 0;
+}
+
+.section-options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.section-options h5 {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 500;
+    color: #94a3b8;
+}
+
+.section-options label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    padding: 12px 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+}
+
+.section-options label:hover {
+    background: #f1f5f9;
+}
+
+.section-options input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    accent-color: #000;
+    margin-top: 2px;
+}
+
+.section-options strong {
+    display: block;
+    font-size: 13px;
+    color: #0f172a;
+}
+
+.section-options small {
+    display: block;
+    margin-top: 3px;
+    color: #64748b;
+    font-size: 11px;
+}
+
+/* =========================================
+   FORM ACTION BUTTONS
+========================================= */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 10px 0 30px;
+}
+
+.cancel-btn,
+.add-product-btn {
+    height: 44px;
+    padding: 0 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.cancel-btn {
+    background: #fff;
+    color: #333;
+    border: 1px solid #cbd5e1;
+}
+
+.cancel-btn:hover {
+    background: #f1f5f9;
+    color: #000;
+}
+
+.add-product-btn {
+    background: #0f172a;
+    color: #fff;
+    border: 1px solid #0f172a;
+}
+
+.add-product-btn:hover {
+    background: #1e293b;
+    border-color: #1e293b;
+}
+
+/* =========================================
+   RESPONSIVE MEDIA QUERIES
+========================================= */
+
+/* Tablets (Max 992px) */
+@media screen and (max-width: 992px) {
+    .add-product {
+        padding: 20px 16px;
+    }
+
+    .form-section {
+        padding: 20px;
+    }
+
+    .image-preview {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+}
+
+/* Mobile & Small Tablets (Max 768px) */
+@media screen and (max-width: 768px) {
+    .add-product {
+        padding: 16px 12px;
+    }
+
+    .add-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 18px;
+    }
+
+    .add-header h1 {
+        font-size: 24px;
+    }
+
+    .add-header p {
+        font-size: 12px;
+    }
+
+    .form-section {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+
+    .form-section h2 {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    /* 2 Columns to 1 Column */
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .form-group.full {
+        grid-column: auto;
+    }
+
+    /* Options spacing */
+    .size-box,
+    .badge-options {
+        gap: 8px;
+    }
+
+    .size-box label,
+    .badge-options label {
+        flex: 1 1 calc(50% - 8px); /* 2 items per row on mobile */
+        justify-content: flex-start;
+        padding: 10px 12px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .cancel-btn,
+    .add-product-btn {
+        width: 100%;
+        height: 46px;
+    }
+}
+
+/* Small Phones (Max 480px) */
+@media screen and (max-width: 480px) {
+    .add-product {
+        padding: 12px 8px;
+    }
+
+    .add-header h1 {
+        font-size: 22px;
+    }
+
+    .size-box label {
+        flex: 1 1 calc(33.33% - 8px); /* Sizes fit 3 in a row */
+        justify-content: center;
+    }
+
+    .badge-options label {
+        flex: 1 1 100%; /* Badges take full width */
+    }
+
+    .image-preview {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .image-upload {
+        min-height: 120px;
+        padding: 18px 10px;
+    }
+
+    .image-upload strong {
+        font-size: 12px;
+    }
+
+    .image-upload span {
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,433 @@
+/* =========================================
+   CREST & COLLAR
+   CLEAN PREMIUM PRELOADER
+========================================= */
+
+.cc-preloader {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 99999;
+
+    overflow: hidden;
+
+    background: #050505;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================
+   CENTER
+========================================= */
+
+.cc-preloader__center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+
+    animation: centerReveal 1s cubic-bezier(.76, 0, .24, 1);
+}
+
+
+/* =========================================
+   CC LOGO
+========================================= */
+
+.cc-logo-mark {
+    position: relative;
+
+    width: 145px;
+    height: 145px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Rings */
+
+.cc-ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, .35);
+}
+
+
+.cc-ring--outer {
+    width: 145px;
+    height: 145px;
+
+    animation: outerRing 4s linear infinite;
+}
+
+
+.cc-ring--inner {
+    width: 105px;
+    height: 105px;
+
+    border-color: rgba(255, 255, 255, .15);
+
+    animation: innerRing 3s ease-in-out infinite;
+}
+
+
+/* =========================================
+   CC
+========================================= */
+
+.cc-monogram {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 48px;
+    font-weight: 500;
+
+    letter-spacing: -10px;
+
+    transform: translateX(-4px);
+
+    animation: logoPulse 3s ease-in-out infinite;
+}
+
+
+.cc-monogram span:first-child {
+    transform: translateX(5px);
+}
+
+
+.cc-monogram span:last-child {
+    transform: translateX(-5px);
+}
+
+
+/* =========================================
+   LINE
+========================================= */
+
+.cc-line {
+    width: 0;
+    height: 1px;
+
+    margin-top: 25px;
+
+    background: #ffffff;
+
+    animation: lineReveal .8s ease .4s forwards;
+}
+
+
+/* =========================================
+   BRAND NAME
+========================================= */
+
+.cc-brand {
+    margin-top: 12px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 9px;
+
+    font-weight: 400;
+
+    letter-spacing: 4px;
+
+    opacity: 0;
+
+    animation: brandReveal .8s ease .6s forwards;
+}
+
+
+.cc-brand span {
+    margin: 0 5px;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   PROGRESS NUMBER
+========================================= */
+
+.cc-progress-number {
+    margin-top: 28px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    min-width: 80px;
+
+    text-align: center;
+
+    font-variant-numeric: tabular-nums;
+
+    animation: numberReveal .8s ease .8s both;
+}
+
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.cc-progress-line {
+    width: 160px;
+    height: 1px;
+
+    margin-top: 12px;
+
+    background: rgba(255, 255, 255, .15);
+
+    overflow: hidden;
+}
+
+
+.cc-progress-fill {
+    height: 100%;
+
+    background: #ffffff;
+
+    transition: width .1s linear;
+}
+
+
+/* =========================================
+   CENTER REVEAL
+========================================= */
+
+@keyframes centerReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   OUTER RING
+========================================= */
+
+@keyframes outerRing {
+
+    from {
+        transform: rotate(0deg) scale(.88);
+
+        opacity: .2;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    to {
+        transform: rotate(360deg) scale(.88);
+
+        opacity: .2;
+    }
+}
+
+
+/* =========================================
+   INNER RING
+========================================= */
+
+@keyframes innerRing {
+
+    0% {
+        transform: scale(1);
+
+        opacity: .15;
+    }
+
+    50% {
+        transform: scale(.82);
+
+        opacity: .4;
+    }
+
+    100% {
+        transform: scale(1);
+
+        opacity: .15;
+    }
+}
+
+
+/* =========================================
+   LOGO PULSE
+========================================= */
+
+@keyframes logoPulse {
+
+    0% {
+        transform: translateX(-4px) scale(.97);
+    }
+
+    50% {
+        transform: translateX(-4px) scale(1.04);
+    }
+
+    100% {
+        transform: translateX(-4px) scale(.97);
+    }
+}
+
+
+/* =========================================
+   LINE
+========================================= */
+
+@keyframes lineReveal {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 65px;
+    }
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+@keyframes brandReveal {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(8px);
+
+        letter-spacing: 1px;
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+
+        letter-spacing: 4px;
+    }
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+@keyframes numberReveal {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   EXIT
+========================================= */
+
+.cc-preloader--exit {
+    animation:
+        curtainExit 1s cubic-bezier(.76, 0, .24, 1)
+        forwards;
+}
+
+
+@keyframes curtainExit {
+
+    0% {
+        clip-path: inset(0 0 0 0);
+
+        transform: translateY(0);
+    }
+
+    100% {
+        clip-path: inset(0 0 100% 0);
+
+        transform: translateY(-100%);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .cc-logo-mark {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cc-ring--outer {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cc-ring--inner {
+        width: 88px;
+        height: 88px;
+    }
+
+    .cc-monogram {
+        font-size: 40px;
+    }
+
+    .cc-brand {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .cc-progress-number {
+        font-size: 18px;
+        margin-top: 24px;
+    }
+
+    .cc-progress-line {
+        width: 130px;
+    }
+}

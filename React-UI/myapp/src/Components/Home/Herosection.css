@@ -1,0 +1,321 @@
+/* HERO */
+
+.full-hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+
+/* BACKGROUND */
+
+.carousel-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.carousel-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.78),
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.15));
+}
+
+
+/* CONTENT */
+
+.carousel-content-wrapper {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 80px;
+    box-sizing: border-box;
+}
+
+.carousel-text-box {
+    max-width: 600px;
+}
+
+
+/* TEXT */
+
+.carousel-tag {
+    display: block;
+    margin-bottom: 14px;
+
+    font-family: Arial, sans-serif;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    color: #c9c9c7;
+}
+
+.carousel-title {
+    margin: 0 0 12px;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(38px, 5.2vw, 70px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -1px;
+
+    color: #fff;
+}
+
+.carousel-sub {
+    margin: 0 0 16px;
+
+    font-family: Arial, sans-serif;
+    font-size: 13.5px;
+    letter-spacing: 1.2px;
+
+    color: #ecece9;
+}
+
+.carousel-desc {
+    max-width: 500px;
+    margin: 0 0 34px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.75;
+
+    color: #ccc;
+}
+
+
+/* BUTTON */
+
+.carousel-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 15px 32px;
+
+    border: none;
+    background: #fff;
+    color: #111;
+
+    font-family: Arial, sans-serif;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.carousel-cta-btn:hover {
+    background: #e2e2df;
+    transform: translateY(-2px);
+}
+
+
+/* ARROWS */
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+
+    width: 50px;
+    height: 50px;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+
+    color: #fff;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    background: #fff;
+    color: #111;
+    border-color: #fff;
+}
+
+.carousel-arrow.prev {
+    left: 30px;
+}
+
+.carousel-arrow.next {
+    right: 30px;
+}
+
+
+/* PROGRESS */
+
+.carousel-dots {
+    position: absolute;
+    left: 80px;
+    bottom: 40px;
+
+    z-index: 10;
+
+    display: flex;
+    gap: 18px;
+}
+
+.dot {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    opacity: 0.45;
+    cursor: pointer;
+}
+
+.dot.active {
+    opacity: 1;
+}
+
+.dot-label {
+    font-family: Arial, sans-serif;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.dot-line {
+    position: relative;
+
+    width: 55px;
+    height: 2px;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.dot-fill {
+    display: block;
+    height: 100%;
+    background: #fff;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .carousel-content-wrapper {
+        padding: 0 35px;
+    }
+
+    .carousel-title {
+        font-size: clamp(32px, 7.5vw, 48px);
+    }
+
+    .carousel-arrow {
+        display: none;
+    }
+
+    .carousel-dots {
+        left: 35px;
+        bottom: 30px;
+    }
+
+    .dot-line {
+        width: 35px;
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .full-hero-carousel {
+        min-height: 600px;
+    }
+
+    .carousel-content-wrapper {
+        padding: 0 20px;
+    }
+
+    .carousel-text-box {
+        max-width: 100%;
+    }
+
+    .carousel-tag {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .carousel-title {
+        font-size: 40px;
+        line-height: 1.05;
+        letter-spacing: -0.5px;
+    }
+
+    .carousel-sub {
+        font-size: 11px;
+    }
+
+    .carousel-desc {
+        font-size: 12px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .carousel-cta-btn {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .carousel-dots {
+        left: 20px;
+        bottom: 25px;
+    }
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 400px) {
+
+    .carousel-title {
+        font-size: 34px;
+    }
+
+    .carousel-desc {
+        font-size: 11px;
+    }
+
+    .carousel-cta-btn {
+        padding: 13px 20px;
+    }
+}

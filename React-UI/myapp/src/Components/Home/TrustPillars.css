@@ -1,0 +1,62 @@
+.trust-pillars-bar {
+    width: 100%;
+    padding: 50px 4vw;
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+}
+
+.trust-pillars-container {
+    max-width: 1440px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.trust-pillar-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pillar-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+}
+
+.pillar-text h4 {
+    margin: 0 0 3px;
+    font-family: Arial, sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #111;
+    text-transform: uppercase;
+}
+
+.pillar-text p {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #777;
+}
+
+@media (max-width: 1024px) {
+    .trust-pillars-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .trust-pillars-bar {
+        padding: 40px 20px;
+    }
+
+    .trust-pillars-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+}

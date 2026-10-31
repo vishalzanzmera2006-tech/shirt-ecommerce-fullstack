@@ -1,0 +1,231 @@
+.saved-addr-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 120px 20px 80px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #0f172a;
+}
+
+.saved-addr-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 36px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 18px;
+}
+
+.saved-addr-header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 6px;
+}
+
+.saved-addr-header p {
+    color: #64748b;
+    font-size: 13.5px;
+    margin: 0;
+}
+
+.add-address-trigger-btn {
+    height: 42px;
+    padding: 0 16px;
+    background: #0f172a;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.add-address-trigger-btn:hover {
+    background: #1e293b;
+}
+
+.addresses-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.address-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s;
+}
+
+.address-card.default-border {
+    border-color: #0f172a;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.addr-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.addr-tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #f1f5f9;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.default-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    color: #059669;
+    background: #ecfdf5;
+    padding: 3px 8px;
+    border-radius: 999px;
+}
+
+.addr-name {
+    margin: 0 0 6px;
+    font-size: 14.5px;
+    font-weight: 600;
+}
+
+.addr-text {
+    margin: 0 0 4px;
+    font-size: 12.5px;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+.addr-phone {
+    margin: 8px 0 16px;
+    font-size: 12px;
+    color: #0f172a;
+    font-weight: 500;
+}
+
+.addr-card-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 12px;
+}
+
+.set-default-btn {
+    background: none;
+    border: none;
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+}
+
+.addr-delete-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    margin-left: auto;
+    transition: color 0.2s;
+}
+
+.addr-delete-btn:hover {
+    color: #dc2626;
+}
+
+/* Modal Form */
+.address-form-modal {
+    margin-bottom: 28px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.address-form-box h3 {
+    margin: 0 0 18px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.addr-grid-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.addr-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.addr-group.full {
+    grid-column: span 2;
+}
+
+.addr-group label {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+.addr-group input,
+.addr-group select {
+    height: 40px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 0 12px;
+    font-size: 13px;
+    outline: none;
+    background: #ffffff;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.addr-btn {
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.addr-btn.primary {
+    background: #0f172a;
+    color: #ffffff;
+    border: none;
+}
+
+.addr-btn.secondary {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+}

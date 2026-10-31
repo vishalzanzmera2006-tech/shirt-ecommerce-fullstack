@@ -1,0 +1,321 @@
+/* =========================================
+   SIGNATURE COLLECTION
+========================================= */
+
+.signature-collection {
+    width: 100%;
+    padding: 120px 5%;
+    background: #111;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.signature-header {
+    max-width: 750px;
+    margin-bottom: 65px;
+}
+
+.signature-number {
+    display: block;
+    margin-bottom: 18px;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #888;
+}
+
+.signature-header h2 {
+    margin: 0;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(50px, 7vw, 90px);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -5px;
+}
+
+.signature-header h2 span {
+    font-style: italic;
+}
+
+.signature-header p {
+    max-width: 430px;
+    margin: 28px 0 0;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #999;
+}
+
+
+/* =========================================
+   COLLECTION GRID
+========================================= */
+
+.signature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.signature-card {
+    cursor: pointer;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.signature-image-box {
+    position: relative;
+    width: 100%;
+    height: 580px;
+    overflow: hidden;
+    background: #222;
+}
+
+.signature-image-box img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s ease,
+        filter 0.5s ease;
+}
+
+.signature-card:hover .signature-image-box img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   IMAGE NUMBER
+========================================= */
+
+.signature-id {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: #fff;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.signature-arrow {
+    position: absolute;
+
+    right: 18px;
+    bottom: 18px;
+
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.signature-card:hover .signature-arrow {
+    background: #fff;
+    color: #111;
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   CARD INFO
+========================================= */
+
+.signature-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #333;
+}
+
+.signature-subtitle {
+    display: block;
+    margin-bottom: 7px;
+
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #777;
+}
+
+.signature-info h3 {
+    margin: 0;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.signature-info p {
+    max-width: 180px;
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.6;
+    color: #888;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.signature-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 65px;
+    padding-top: 20px;
+
+    border-top: 1px solid #333;
+}
+
+.signature-footer span {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #777;
+}
+
+.signature-footer button {
+    padding: 12px 0;
+
+    border: none;
+    border-bottom: 1px solid #fff;
+
+    background: transparent;
+    color: #fff;
+
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.signature-footer button:hover {
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .signature-collection {
+        padding: 90px 5%;
+    }
+
+    .signature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .signature-card:last-child {
+        grid-column: span 2;
+    }
+
+    .signature-image-box {
+        height: 500px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .signature-collection {
+        padding: 75px 20px;
+    }
+
+    .signature-header {
+        margin-bottom: 45px;
+    }
+
+    .signature-header h2 {
+        font-size: 52px;
+        letter-spacing: -3px;
+    }
+
+    .signature-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .signature-card:last-child {
+        grid-column: auto;
+    }
+
+    .signature-image-box {
+        height: 480px;
+    }
+
+    .signature-info {
+        display: block;
+    }
+
+    .signature-info p {
+        max-width: 300px;
+        margin-top: 15px;
+    }
+
+    .signature-footer {
+        display: block;
+        margin-top: 50px;
+    }
+
+    .signature-footer button {
+        margin-top: 20px;
+    }
+
+}

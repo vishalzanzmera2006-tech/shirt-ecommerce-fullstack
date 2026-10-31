@@ -1,0 +1,379 @@
+/* =========================================
+   CONTAINER & WRAPPER
+========================================= */
+.customers-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   HEADER SECTION
+========================================= */
+.customers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+    gap: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 18px;
+}
+
+.customers-header span {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.customers-header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+/* Refresh Button (Direct Header Action) */
+.customers-header .refresh-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #ffffff;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    padding: 9px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.customers-header .refresh-btn:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+    color: #0f172a;
+}
+
+.customers-header .refresh-btn.spinning svg {
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* =========================================
+   SEARCH TOOLBAR
+========================================= */
+.customers-container .table-toolbar {
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.customers-container .search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 10px 14px;
+    width: 360px;
+    max-width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.customers-container .search-box:focus-within {
+    border-color: #0f172a;
+    box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.05);
+}
+
+.customers-container .search-box svg {
+    color: #94a3b8;
+    flex-shrink: 0;
+}
+
+.customers-container .search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+    width: 100%;
+    color: #0f172a;
+    font-family: inherit;
+}
+
+.customers-container .search-box input::placeholder {
+    color: #94a3b8;
+}
+
+/* =========================================
+   CUSTOMERS CARD GRID
+========================================= */
+.customers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 18px;
+    width: 100%;
+}
+
+.customer-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+.customer-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+    border-color: #cbd5e1;
+}
+
+/* Card Header & Avatar */
+.customer-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.customer-avatar {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;          /* Shrink hone se rokega */
+    min-height: 40px;
+    aspect-ratio: 1 / 1;       /* Hamesha perfect square maintain karega */
+    border-radius: 50%;        /* Perfect circle banayega */
+    background: #0f172a;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;            /* Text ke extra vertical spacing ko remove karega */
+    flex-shrink: 0;            /* Flex container me squeeze nahi hone dega */
+    overflow: hidden;          /* Shape ke bahar kuch overflow nahi hone dega */
+    box-sizing: border-box;
+}
+
+.customer-card-header > div {
+    min-width: 0;
+    /* flex: 1; */
+}
+
+.customer-name {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.active {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.status-badge.inactive {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+/* Customer Details */
+.customer-details {
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 14px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #475569;
+    min-width: 0;
+}
+
+.detail-item svg {
+    color: #64748b;
+    flex-shrink: 0;
+}
+
+.detail-item span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+/* Card Action Button */
+.customer-card-actions {
+    margin-top: 16px;
+}
+
+.status-toggle-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 9px 14px;
+    border-radius: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.status-toggle-btn.block-btn {
+    background: #fef2f2;
+    color: #dc2626;
+    border-color: #fecaca;
+}
+
+.status-toggle-btn.block-btn:hover {
+    background: #fee2e2;
+    border-color: #fca5a5;
+    color: #b91c1c;
+}
+
+.status-toggle-btn.activate-btn {
+    background: #f0fdf4;
+    color: #16a34a;
+    border-color: #bbf7d0;
+}
+
+.status-toggle-btn.activate-btn:hover {
+    background: #dcfce7;
+    border-color: #86efac;
+}
+
+/* Empty State */
+.empty-state-box {
+    padding: 60px 20px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* ========================================================
+   MEDIA QUERIES (TABLETS & MOBILE PHONES)
+======================================================== */
+
+/* Tablets (Max 992px) */
+@media screen and (max-width: 992px) {
+    .customers-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 16px;
+    }
+}
+
+/* Mobile & Small Tablets (Max 768px) */
+@media screen and (max-width: 768px) {
+    .customers-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+
+    .customers-header .refresh-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 14px;
+    }
+
+    .customers-header h1 {
+        font-size: 21px;
+    }
+
+    .customers-container .table-toolbar {
+        margin-bottom: 18px;
+    }
+
+    .customers-container .search-box {
+        width: 100%;
+    }
+
+    .customers-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .customer-card {
+        padding: 16px;
+    }
+}
+
+/* Small Mobile Phones (Max 480px) */
+@media screen and (max-width: 480px) {
+    .customers-header h1 {
+        font-size: 19px;
+    }
+
+    .customer-card-header {
+        gap: 12px;
+    }
+
+    .customer-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .customer-name {
+        font-size: 14px;
+    }
+
+    .detail-item {
+        font-size: 12px;
+    }
+
+    .status-toggle-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}

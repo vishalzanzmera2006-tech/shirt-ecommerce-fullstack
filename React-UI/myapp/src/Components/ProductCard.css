@@ -1,0 +1,256 @@
+/* Card Container */
+.product-card {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    min-width: 0;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.25s ease;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    box-sizing: border-box;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .product-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .product-card:hover .product-card-img {
+        transform: scale(1.03);
+    }
+
+    .product-card:hover .product-card-overlay {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .product-card:hover .product-card-thumbs {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Image Box */
+.product-card-image-box {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    height: auto;
+    background: #f8fafc;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #e2e8f0;
+}
+
+.product-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Badge */
+.product-card-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 8px;
+    border-radius: 2px;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+/* Actions */
+.product-card-overlay {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0;
+    transform: translateX(6px);
+    transition: all 0.25s ease;
+    z-index: 3;
+}
+
+.product-card-action-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0f172a;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.product-card-action-btn:hover {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.product-card-action-btn.active {
+    background: #ffffff;
+}
+
+/* Preview Thumbs */
+.product-card-thumbs {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transition: all 0.25s ease;
+    z-index: 3;
+}
+
+.product-card-thumb-dot {
+    width: 24px;
+    height: 30px;
+    border: 1.5px solid transparent;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #f1f5f9;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.15s ease;
+}
+
+.product-card-thumb-dot.active {
+    border-color: #0f172a;
+}
+
+.product-card-thumb-dot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Info */
+.product-card-info {
+    padding-top: 14px;
+}
+
+.product-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.product-card-cat {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #94a3b8;
+}
+
+/* Green Discount Tag */
+.product-card-discount {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #059669;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    padding: 2px 7px;
+    border-radius: 4px;
+}
+
+.product-card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-card-pricing {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.product-card-sale-price {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.product-card-del-price {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* Mobile: Big Card With Peek Effect */
+@media (max-width: 768px) {
+    .product-card {
+        flex: 0 0 82% !important;
+        /* 82% width thi next/prev card no peek dekhase */
+        max-width: 82% !important;
+        scroll-snap-align: center;
+        /* Center snap */
+    }
+
+    .product-card-image-box {
+        height: 440px !important;
+        aspect-ratio: auto !important;
+        border-radius: 8px;
+    }
+
+    .product-card-overlay {
+        opacity: 1;
+        transform: translateX(0);
+        top: 12px;
+        right: 12px;
+    }
+
+    .product-card-thumbs {
+        opacity: 1;
+        transform: translateX(-50%);
+        bottom: 12px;
+    }
+
+    .product-card-title {
+        font-size: 16px;
+    }
+
+    .product-card-sale-price {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        flex: 0 0 84% !important;
+        max-width: 84% !important;
+    }
+
+    .product-card-image-box {
+        height: 410px !important;
+    }
+}

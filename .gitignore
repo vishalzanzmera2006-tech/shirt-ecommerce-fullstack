@@ -1,0 +1,27 @@
+# 1. Sabhi node_modules ignore karva
+node_modules/
+**/node_modules/
+
+# 2. Tamam .env files ignore karva (Root, Node, React-UI, Admin)
+.env
+.env.*
+**/.env
+**/.env.*
+!**/.env.example
+
+# 3. Production build folders ignore karva
+dist/
+build/
+**/dist/
+**/build/
+
+# 4. OS ane Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 5. Debug logs
+*.log
+npm-debug.log*
+yarn-debug.log*

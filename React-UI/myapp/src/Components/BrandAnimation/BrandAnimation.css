@@ -1,0 +1,148 @@
+/* =========================================
+   ULTRA-SMOOTH GPU STAGE (Zero Layout Shift)
+========================================= */
+.ultra-brand-root {
+    position: relative;
+    width: 240px;
+    /* Fixed width keeps Navbar intact */
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    background: transparent;
+    flex-shrink: 0;
+    contain: layout paint;
+    /* Optimizes rendering performance */
+}
+
+/* =========================================
+   1. COLLAR NOTCH (TOP)
+========================================= */
+.collar-apex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 2px;
+    will-change: transform;
+}
+
+.apex-line {
+    width: 22px;
+    height: 1px;
+    background: #111;
+    opacity: 0.8;
+}
+
+.apex-diamond {
+    font-size: 7.5px;
+    color: #111;
+    line-height: 1;
+}
+
+/* =========================================
+   2. CORE TYPOGRAPHY
+========================================= */
+.brand-motion-viewport {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.word-pack {
+    display: inline-flex;
+    align-items: baseline;
+    overflow: hidden;
+    will-change: transform, width, opacity;
+}
+
+/* Primary 'C' */
+.monogram-c {
+    display: inline-block;
+    font-size: 21px;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: 0.5px;
+    will-change: transform;
+    transform-origin: center;
+}
+
+/* Collapsible letters (REST & OLLAR) */
+.fold-body {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #111;
+    white-space: nowrap;
+    will-change: width, opacity, transform;
+}
+
+/* Ampersand */
+.brand-amp {
+    display: inline-block;
+    font-family: "Didot", "Playfair Display", Georgia, serif;
+    font-style: italic;
+    font-size: 17px;
+    color: #444;
+    font-weight: 400;
+    will-change: margin, transform;
+    transform-origin: center;
+}
+
+/* =========================================
+   3. HAIRLINE UNDERLINE
+========================================= */
+.hairline-under {
+    height: 1px;
+    background: #111;
+    margin-top: 4px;
+    opacity: 0.85;
+    will-change: width;
+}
+
+/* Hover Pause & Crisp Visual */
+.ultra-brand-root:hover .hairline-under {
+    opacity: 1;
+    height: 1.5px;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+@media (max-width: 640px) {
+    .ultra-brand-root {
+        width: 170px;
+        height: 40px;
+    }
+
+    .brand-motion-viewport {
+        font-size: 14px;
+    }
+
+    .monogram-c {
+        font-size: 16px;
+    }
+
+    .fold-body {
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
+
+    .brand-amp {
+        font-size: 13px;
+    }
+
+    .apex-line {
+        width: 14px;
+    }
+}

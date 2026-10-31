@@ -1,0 +1,270 @@
+.atelier-auth-page-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    background: #f7f7f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #111111;
+}
+
+.atelier-auth-container {
+    width: 100%;
+    max-width: 1080px;
+    min-height: 640px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+}
+
+/* Left Editorial Column */
+.atelier-auth-visual-side {
+    position: relative;
+    background: #111111;
+    color: #ffffff;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.atelier-auth-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) contrast(1.1);
+}
+
+.atelier-auth-visual-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.88) 15%,
+            rgba(0, 0, 0, 0.25) 80%);
+}
+
+.atelier-auth-visual-content {
+    position: relative;
+    z-index: 2;
+}
+
+.atelier-auth-tag {
+    display: inline-block;
+    font-size: 8.5px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #d4af37;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.atelier-auth-visual-content h2 {
+    margin: 0 0 14px 0;
+    font-family: Georgia, serif;
+    font-size: clamp(26px, 2.6vw, 36px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.atelier-auth-visual-content h2 em {
+    font-style: italic;
+}
+
+.atelier-auth-visual-content p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #cccccc;
+    margin: 0 0 24px 0;
+}
+
+.atelier-auth-guarantee {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 11px;
+    color: #e0e0e0;
+}
+
+/* Right Form Column */
+.atelier-auth-form-side {
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.atelier-auth-brand-kicker {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+    color: #888888;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.atelier-auth-title {
+    margin: 0 0 8px 0;
+    font-family: Georgia, serif;
+    font-size: clamp(24px, 2.2vw, 30px);
+    font-weight: 400;
+    color: #111111;
+}
+
+.atelier-auth-subtitle {
+    font-size: 13px;
+    color: #666666;
+    margin: 0 0 24px 0;
+}
+
+/* Form Body */
+.atelier-auth-form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.atelier-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.atelier-input-group label {
+    font-size: 8.5px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: #777777;
+    text-transform: uppercase;
+}
+
+.atelier-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.atelier-forgot-link {
+    font-size: 11px;
+    color: #666666;
+    text-decoration: none;
+}
+
+.atelier-forgot-link:hover {
+    color: #111111;
+}
+
+.atelier-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.atelier-input-icon {
+    position: absolute;
+    left: 14px;
+    color: #888888;
+    pointer-events: none;
+}
+
+.atelier-input-wrapper input {
+    width: 100%;
+    padding: 12px 14px 12px 42px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: #faf9f6;
+    font-size: 13.5px;
+    color: #111111;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.atelier-input-wrapper input:focus {
+    border-color: #111111;
+    background: #ffffff;
+}
+
+.atelier-error-msg {
+    font-size: 11px;
+    color: #d9534f;
+    margin-top: 2px;
+}
+
+.atelier-password-toggle {
+    position: absolute;
+    right: 14px;
+    background: none;
+    border: none;
+    padding: 0;
+    color: #888888;
+    cursor: pointer;
+}
+
+.atelier-password-toggle:hover {
+    color: #111111;
+}
+
+/* Submit CTA */
+.atelier-auth-submit-btn {
+    margin-top: 6px;
+    background: #111111;
+    color: #ffffff;
+    border: none;
+    padding: 13px 20px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.25s ease;
+}
+
+.atelier-auth-submit-btn:hover {
+    background: #2a2a2a;
+}
+
+/* Bottom Switch Link */
+.atelier-auth-switch-link {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #777;
+    text-align: center;
+}
+
+.atelier-auth-switch-link a {
+    color: #111;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-left: 4px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .atelier-auth-container {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+    }
+
+    .atelier-auth-visual-side {
+        display: none;
+    }
+
+    .atelier-auth-form-side {
+        padding: 40px 30px;
+    }
+}

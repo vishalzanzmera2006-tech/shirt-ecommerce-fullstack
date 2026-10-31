@@ -1,0 +1,49 @@
+/* =========================================================
+   GOOGLE FONTS
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap");
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+  --black: #111111;
+  --white: #ffffff;
+  --bg: #f7f7f5;
+  --text: #171717;
+  --muted: #777777;
+  --light-text: #999999;
+  --border: #e7e7e3;
+  --green: #4f745e;
+
+  --sidebar-width: 260px;
+
+  --font-body: "DM Sans", Arial, sans-serif;
+  --font-heading: "Playfair Display", Georgia, serif;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}

@@ -1,0 +1,82 @@
+/* Base Desktop Styles */
+.floating-whatsapp-btn {
+    position: fixed;
+    right: 32px;
+    bottom: 100px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #25d366;
+    color: #ffffff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+    cursor: pointer;
+    z-index: 99998;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.floating-whatsapp-btn:hover {
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 8px 22px rgba(37, 211, 102, 0.55);
+}
+
+.floating-whatsapp-btn:active {
+    transform: scale(0.95);
+}
+
+/* Hover Tooltip (Desktop) */
+.wa-tooltip {
+    position: absolute;
+    right: 60px;
+    background: #111111;
+    color: #ffffff;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(8px);
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.floating-whatsapp-btn:hover .wa-tooltip {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Tablet Screens */
+@media (max-width: 768px) {
+    .floating-whatsapp-btn {
+        right: 20px;
+        bottom: 85px;
+        width: 46px;
+        height: 46px;
+    }
+
+    .wa-tooltip {
+        display: none;
+    }
+}
+
+/* Mobile Screens (<= 480px) */
+@media (max-width: 480px) {
+    .floating-whatsapp-btn {
+        right: 20px;
+        bottom: 80px;
+        width: 44px;
+        height: 44px;
+        box-shadow: 0 3px 10px rgba(37, 211, 102, 0.35);
+    }
+
+    .floating-whatsapp-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+}

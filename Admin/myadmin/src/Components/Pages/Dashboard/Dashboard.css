@@ -1,0 +1,948 @@
+/* =========================================
+   CONTAINER & OVERALL WRAPPER
+========================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.pro-dashboard {
+    width: 100%;
+    max-width: 1280px;
+    min-width: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: calc(30px + env(safe-area-inset-bottom, 0px));
+    box-sizing: border-box;
+    overflow-x: clip;
+}
+
+/* =========================================
+   HERO HEADER
+========================================= */
+.dash-hero-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e8e8e4;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.dash-hero-header>div:first-child {
+    min-width: 0;
+    flex: 1 1 320px;
+}
+
+.dash-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f4f4f0;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+}
+
+.dash-badge-pill span {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.dash-hero-header h1 {
+    margin: 0 0 4px;
+    font-size: clamp(19px, 1.2vw + 15px, 26px);
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.dash-hero-header p {
+    margin: 0;
+    font-size: 13px;
+    color: #777;
+    line-height: 1.4;
+}
+
+.hero-action-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #e2e2dc;
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #27ae60;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7);
+    animation: livePulse 2s infinite;
+    flex-shrink: 0;
+}
+
+@keyframes livePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 7px rgba(39, 174, 96, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(39, 174, 96, 0);
+    }
+}
+
+.primary-dash-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #111111;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+    min-height: 40px;
+}
+
+.primary-dash-btn:focus-visible,
+.timeframe-toggle button:focus-visible,
+.ghost-icon-link:focus-visible {
+    outline: 2px solid #2980b9;
+    outline-offset: 2px;
+}
+
+@media (hover: hover) {
+    .primary-dash-btn:hover {
+        background: #333333;
+    }
+}
+
+/* =========================================
+   KPI CARDS GRID
+========================================= */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+}
+
+.kpi-card {
+    background: #ffffff;
+    border: 1px solid #e8e8e4;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+@media (hover: hover) {
+    .kpi-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+}
+
+.kpi-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.kpi-title {
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #777;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.kpi-icon-badge {
+    width: 32px;
+    height: 32px;
+    background: #fafaf7;
+    border: 1px solid #e8e8e2;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    flex-shrink: 0;
+}
+
+.kpi-mid h2 {
+    margin: 12px 0;
+    font-size: clamp(20px, 0.8vw + 16px, 26px);
+    overflow-wrap: anywhere;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -0.5px;
+}
+
+.kpi-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    flex-wrap: wrap;
+}
+
+.trend-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.trend-badge.up {
+    background: #eafaf1;
+    color: #27ae60;
+}
+
+.trend-badge.neutral {
+    background: #f5f5f2;
+    color: #555;
+}
+
+.trend-caption {
+    color: #888;
+    white-space: normal;
+    min-width: 0;
+}
+
+/* =========================================
+   GENERAL CARD STRUCTURE
+========================================= */
+.dash-card {
+    background: #ffffff;
+    border: 1px solid #e8e8e4;
+    border-radius: 8px;
+    padding: 22px 24px;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    /* grid child overflow fix */
+}
+
+.card-top-bar>div:first-child {
+    min-width: 0;
+}
+
+.card-top-bar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.card-top-bar h3 {
+    margin: 0 0 3px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+}
+
+.card-top-bar p {
+    margin: 0;
+    font-size: 12px;
+    color: #888;
+}
+
+/* =========================================
+   SPLIT GRIDS (CHARTS & BOTTOM SECTIONS)
+========================================= */
+.analytics-split-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+    gap: 18px;
+    width: 100%;
+}
+
+.bottom-split-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.1fr);
+    gap: 18px;
+    width: 100%;
+}
+
+/* Timeframe Selector */
+.timeframe-toggle {
+    display: flex;
+    background: #f5f5f2;
+    border-radius: 6px;
+    padding: 3px;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.timeframe-toggle button {
+    background: transparent;
+    border: none;
+    font-size: 11px;
+    font-weight: 700;
+    color: #777;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    min-height: 30px;
+}
+
+.timeframe-toggle button.active {
+    background: #111;
+    color: #fff;
+}
+
+.chart-canvas-area {
+    width: 100%;
+    min-width: 0;
+    height: clamp(220px, 28vw, 320px);
+    /* ResponsiveContainer isse height leta hai */
+    overflow: hidden;
+}
+
+/* Donut Category Section */
+.donut-center-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    height: 190px;
+}
+
+.category-legend-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 14px;
+    border-top: 1px solid #f0f0ed;
+    padding-top: 14px;
+    width: 100%;
+}
+
+.legend-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    gap: 8px;
+    min-width: 0;
+}
+
+.legend-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+.color-swatch {
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.legend-val {
+    color: #111;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* =========================================
+   TRANSACTIONS DATA TABLE
+========================================= */
+.ghost-icon-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    color: #111;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+    min-height: 32px;
+}
+
+@media (hover: hover) {
+    .ghost-icon-link:hover {
+        background: #f5f5f2;
+    }
+}
+
+.responsive-table-box {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.pro-data-table {
+    width: 100%;
+    min-width: 640px;
+    /* tablet/laptop par squish nahi hoga; mobile par cards ban jata hai */
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.pro-data-table th {
+    padding: 10px 14px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #888;
+    border-bottom: 1px solid #eaeaea;
+    white-space: nowrap;
+}
+
+.pro-data-table td {
+    padding: 14px;
+    font-size: 12.5px;
+    border-bottom: 1px solid #f6f6f4;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.order-code {
+    display: block;
+    font-weight: 700;
+    color: #111;
+    font-size: 12px;
+}
+
+.order-time {
+    font-size: 11px;
+    color: #999;
+}
+
+.client-cell strong {
+    display: block;
+    font-size: 13px;
+    color: #111;
+}
+
+.client-cell span {
+    font-size: 11px;
+    color: #888;
+}
+
+.item-title {
+    color: #333;
+    font-weight: 500;
+}
+
+.order-amount {
+    font-size: 13.5px;
+    color: #111;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.status-badge.delivered {
+    background: #eafaf1;
+    color: #27ae60;
+}
+
+.status-badge.in-transit {
+    background: #ebf5fb;
+    color: #2980b9;
+}
+
+.status-badge.processing {
+    background: #fef5e7;
+    color: #d35400;
+}
+
+/* =========================================
+   TOP PERFORMING PRODUCTS WIDGET
+========================================= */
+.top-products-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+}
+
+.top-product-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f6f6f4;
+}
+
+.top-product-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.rank-number {
+    font-size: 13px;
+    font-weight: 800;
+    color: #aaa;
+    width: 20px;
+    flex-shrink: 0;
+}
+
+.top-product-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.top-product-info h4 {
+    margin: 0 0 3px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #111;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.top-product-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #888;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.top-product-meta>span:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+.dot-sep {
+    color: #ccc;
+}
+
+.top-product-finance {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.top-product-finance strong {
+    display: block;
+    font-size: 13px;
+    color: #111;
+}
+
+.growth-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #27ae60;
+}
+
+/* ========================================================
+   RESPONSIVE (Large screens -> Laptops -> Tablets -> Phones)
+   Breakpoints: 1600 / 1120 / 900 / 768 / 600 / 480 / 360
+======================================================== */
+
+/* Extra large monitors */
+@media screen and (min-width: 1600px) {
+    .pro-dashboard {
+        max-width: 1480px;
+        gap: 28px;
+    }
+
+    .kpi-grid {
+        gap: 20px;
+    }
+
+    .analytics-split-grid,
+    .bottom-split-grid {
+        gap: 22px;
+    }
+
+    .chart-canvas-area {
+        height: 340px;
+    }
+}
+
+/* Small laptops, iPad landscape & tablets (<= 1120px) */
+@media screen and (max-width: 1120px) {
+    .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .analytics-split-grid,
+    .bottom-split-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    /* Donut + legend side-by-side jab full width mile */
+    .category-pie-card {
+        display: grid;
+        grid-template-columns: minmax(160px, 220px) minmax(0, 1fr);
+        column-gap: 28px;
+        align-items: center;
+    }
+
+    .category-pie-card .card-top-bar {
+        grid-column: 1 / -1;
+    }
+
+    .category-pie-card .category-legend-list {
+        margin-top: 0;
+        border-top: none;
+        padding-top: 0;
+        border-left: 1px solid #f0f0ed;
+        padding-left: 28px;
+    }
+
+    .top-products-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 28px;
+        row-gap: 14px;
+    }
+
+    .top-product-item:nth-last-child(2) {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+/* Tablets portrait & large phones (<= 768px) */
+@media screen and (max-width: 768px) {
+    .pro-dashboard {
+        gap: 18px;
+    }
+
+    .dash-hero-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding-bottom: 16px;
+    }
+
+    .hero-action-group {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .live-indicator {
+        font-size: 11px;
+        padding: 8px 12px;
+    }
+
+    .dash-card {
+        padding: 18px;
+    }
+
+    .card-top-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .timeframe-toggle {
+        width: 100%;
+    }
+
+    .timeframe-toggle button {
+        flex: 1;
+        text-align: center;
+        padding: 8px 6px;
+        min-height: 36px;
+    }
+
+    .ghost-icon-link {
+        align-self: flex-start;
+        padding-left: 0;
+    }
+
+    /* ---- Table -> stacked cards (no sideways scrolling) ---- */
+    .pro-data-table {
+        min-width: 0;
+        display: block;
+    }
+
+    .pro-data-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+
+    .pro-data-table tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .pro-data-table tr {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #eeeeea;
+        border-radius: 8px;
+        padding: 4px 14px;
+        background: #fff;
+    }
+
+    .pro-data-table td {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 10px 0;
+        border-bottom: 1px dashed #efefeb;
+        white-space: normal;
+        text-align: right;
+    }
+
+    .pro-data-table td:last-child {
+        border-bottom: none;
+    }
+
+    .pro-data-table td::before {
+        content: attr(data-label);
+        flex-shrink: 0;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: #999;
+        text-align: left;
+    }
+
+    .pro-data-table .cell-order {
+        text-align: right;
+    }
+
+    .order-code,
+    .order-time {
+        display: block;
+    }
+
+    .client-cell {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Phones (<= 600px) */
+@media screen and (max-width: 600px) {
+    .kpi-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .kpi-card {
+        padding: 16px;
+    }
+
+    .kpi-mid h2 {
+        margin: 8px 0;
+    }
+
+    .hero-action-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .live-indicator {
+        justify-content: center;
+    }
+
+    .primary-dash-btn {
+        width: 100%;
+        min-height: 44px;
+        /* touch-friendly */
+    }
+
+    .chart-canvas-area {
+        height: 240px;
+    }
+
+    /* Donut stack: chart upar, legend neeche */
+    .category-pie-card {
+        display: block;
+    }
+
+    .category-pie-card .category-legend-list {
+        margin-top: 14px;
+        border-top: 1px solid #f0f0ed;
+        padding-top: 14px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .donut-center-wrap {
+        height: 180px;
+    }
+
+    .top-products-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .top-product-item:nth-last-child(2) {
+        padding-bottom: 14px;
+        border-bottom: 1px solid #f6f6f4;
+    }
+
+    .top-product-item:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+/* Small phones (<= 480px) */
+@media screen and (max-width: 480px) {
+    .dash-card {
+        padding: 14px;
+    }
+
+    .dash-hero-header p {
+        font-size: 12px;
+    }
+
+    .card-top-bar h3 {
+        font-size: 15px;
+    }
+
+    .top-product-item {
+        gap: 10px;
+    }
+
+    .top-product-info h4 {
+        font-size: 12.5px;
+    }
+
+    .top-product-finance strong {
+        font-size: 12px;
+    }
+
+    .top-product-meta {
+        font-size: 10.5px;
+    }
+
+    .chart-canvas-area {
+        height: 220px;
+    }
+}
+
+/* Very small phones (<= 360px, e.g. iPhone SE / Galaxy Fold) */
+@media screen and (max-width: 360px) {
+    .dash-badge-pill span {
+        letter-spacing: 1px;
+        font-size: 8.5px;
+    }
+
+    .kpi-card {
+        padding: 14px;
+    }
+
+    .kpi-title {
+        font-size: 10.5px;
+    }
+
+    .rank-number {
+        width: 16px;
+    }
+
+    .pro-data-table tr {
+        padding: 2px 12px;
+    }
+
+    .legend-row {
+        font-size: 11.5px;
+    }
+}
+
+/* Landscape phones: chart ko zyada tall mat karo */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    .chart-canvas-area {
+        height: 200px;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .live-dot {
+        animation: none;
+    }
+
+    .kpi-card,
+    .primary-dash-btn,
+    .timeframe-toggle button,
+    .ghost-icon-link {
+        transition: none;
+    }
+}

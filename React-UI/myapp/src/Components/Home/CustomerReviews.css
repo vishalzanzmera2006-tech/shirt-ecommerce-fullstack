@@ -1,0 +1,225 @@
+.customer-reviews-section {
+    width: 100%;
+    padding: 0px 4vw;
+    background-color: #f7f7f5;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #111;
+    overflow: hidden;
+}
+
+/* Header */
+.reviews-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 55px auto;
+}
+
+.reviews-kicker {
+    display: block;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.reviews-title {
+    margin: 0 0 12px 0;
+    font-family: Georgia, serif;
+    font-size: clamp(32px, 3.8vw, 44px);
+    font-weight: 400;
+    letter-spacing: -0.5px;
+}
+
+.reviews-title em {
+    font-style: italic;
+}
+
+.reviews-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* Wide Viewport (Increased from 760px to 1100px) */
+.slider-viewport {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+}
+
+.slide-item {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding: 0 8px;
+}
+
+/* Card Styling: Increased Image & Content Width */
+.review-card {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    /* Image width 380px */
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.03);
+}
+
+.review-image-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    background: #eaeae6;
+}
+
+.review-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.verified-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(17, 17, 17, 0.9);
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Content Area: Spacing & Font Sizing */
+.review-content {
+    padding: 45px 45px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stars-row {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.quote-icon {
+    color: rgba(0, 0, 0, 0.12);
+    margin-bottom: 8px;
+}
+
+.review-text {
+    font-family: Georgia, serif;
+    font-size: clamp(17px, 1.8vw, 21px);
+    line-height: 1.6;
+    color: #222;
+    margin: 0 0 24px 0;
+}
+
+.review-shirt {
+    background: #fbfbf9;
+    border-left: 3px solid #111;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #444;
+    margin-bottom: 24px;
+}
+
+.review-shirt span {
+    font-weight: 700;
+    color: #888;
+    margin-right: 6px;
+}
+
+.review-author {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 16px;
+}
+
+.review-author h4 {
+    margin: 0 0 3px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+}
+
+.review-author p {
+    margin: 0;
+    font-size: 12px;
+    color: #777;
+}
+
+.review-author em {
+    font-style: normal;
+    color: #111;
+    font-weight: 500;
+}
+
+/* Dots */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 35px;
+}
+
+.dot {
+    width: 28px;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.18);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #111;
+    width: 48px;
+}
+
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 900px) {
+    .review-card {
+        grid-template-columns: 300px 1fr;
+    }
+
+    .review-content {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 720px) {
+    .customer-reviews-section {
+        padding: 70px 16px;
+    }
+
+    .review-card {
+        grid-template-columns: 1fr;
+    }
+
+    .review-image-box {
+        height: 300px;
+        min-height: auto;
+    }
+
+    .review-content {
+        padding: 25px 20px;
+    }
+}

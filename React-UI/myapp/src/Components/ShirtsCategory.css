@@ -1,0 +1,407 @@
+/* =========================================
+   CATEGORY ATELIER BASE
+========================================= */
+
+.category-section {
+    width: 100%;
+    background: #ffffff;
+    padding-bottom: 90px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    box-sizing: border-box;
+}
+
+/* 1. Hero Banner */
+.category-hero-banner {
+    width: 100%;
+    height: 420px;
+    position: relative;
+    overflow: hidden;
+    background: #0f172a;
+    margin-top: 72px;
+    /* Navbar thi overlap na thay te mate */
+}
+
+.category-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.65;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-hero-banner:hover .category-hero-img {
+    transform: scale(1.04);
+}
+
+.category-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(15, 23, 42, 0.3) 0%,
+            rgba(15, 23, 42, 0.85) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+}
+
+/* =========================================
+   TOP LEFT SORT DROPDOWN (HEADING NI LEFT SIDE)
+========================================= */
+
+.category-top-left-sort {
+    position: absolute;
+    top: 36px;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    z-index: 50;
+    /* Clear visible rahe te mate */
+}
+
+.top-sort-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+}
+
+.top-sort-box {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.top-sort-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 8px 34px 8px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.top-sort-select:hover {
+    background: rgba(15, 23, 42, 0.95);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.top-sort-select option {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.top-sort-chevron {
+    position: absolute;
+    right: 10px;
+    color: rgba(255, 255, 255, 0.85);
+    pointer-events: none;
+}
+
+/* Banner Content */
+.category-hero-content {
+    max-width: 680px;
+    color: #ffffff;
+}
+
+.hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: #f1f5f9;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+
+.hero-heading {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 46px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0 0 12px;
+    color: #ffffff;
+}
+
+.hero-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+/* Container */
+.category-container {
+    max-width: 1520px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   PRODUCT GRID (DESKTOP)
+========================================= */
+
+.category-grid {
+    display: grid;
+    width: 100%;
+    box-sizing: border-box;
+    justify-items: center;
+    transition: all 0.3s ease;
+}
+
+.category-grid.cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 24px;
+}
+
+.category-grid.cols-4>* {
+    width: 100%;
+    max-width: 330px;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-grid.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px 28px;
+}
+
+.category-grid.cols-3>* {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-grid .product-card-image,
+.category-grid .shirt-img-wrap,
+.category-grid [class*="img-wrap"],
+.category-grid [class*="image-box"] {
+    width: 100% !important;
+    aspect-ratio: 3 / 4 !important;
+    height: auto !important;
+    max-height: 480px;
+    overflow: hidden;
+    position: relative;
+    background: #f8fafc;
+    border-radius: 4px;
+}
+
+.category-grid img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* =========================================
+   LOADING & EMPTY STATE
+========================================= */
+
+.category-loading {
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.category-spinner {
+    width: 38px;
+    height: 38px;
+    border: 2px solid #e2e8f0;
+    border-top-color: #0f172a;
+    border-radius: 50%;
+    animation: catSpin 0.75s linear infinite;
+}
+
+@keyframes catSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.category-empty {
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.category-empty p {
+    color: #475569;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 0 18px;
+}
+
+.category-clear-btn {
+    height: 42px;
+    padding: 0 20px;
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.category-clear-btn:hover {
+    background: #1e293b;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (ALL SCREENS)
+========================================= */
+
+@media (max-width: 1200px) {
+    .category-container {
+        padding: 0 28px;
+    }
+
+    .category-grid.cols-4 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .category-container {
+        padding: 0 20px;
+    }
+
+    .category-hero-banner {
+        height: 340px;
+    }
+
+    .category-top-left-sort {
+        top: 24px;
+        left: 20px;
+    }
+
+    .hero-heading {
+        font-size: 36px;
+    }
+
+    .category-grid,
+    .category-grid.cols-4,
+    .category-grid.cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-hero-banner {
+        height: 320px;
+        margin-top: 64px;
+    }
+
+    .hero-heading {
+        font-size: 30px;
+    }
+
+    .category-grid,
+    .category-grid.cols-4,
+    .category-grid.cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px 14px;
+    }
+}
+
+@media (max-width: 640px) {
+    .category-section {
+        padding-bottom: 60px;
+    }
+
+    .category-hero-banner {
+        height: 290px;
+    }
+
+    .category-hero-overlay {
+        padding: 0 16px;
+    }
+
+    .category-top-left-sort {
+        top: 16px;
+        left: 16px;
+    }
+
+    .top-sort-select {
+        padding: 6px 26px 6px 10px;
+        font-size: 10px;
+    }
+
+    .top-sort-label {
+        font-size: 8px;
+    }
+
+    .hero-heading {
+        font-size: 24px;
+        margin-top: 14px;
+    }
+
+    .hero-desc {
+        font-size: 11.5px;
+    }
+
+    .category-container {
+        padding: 0 12px !important;
+    }
+
+    .category-grid,
+    .category-grid.cols-4,
+    .category-grid.cols-3 {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px 10px !important;
+        padding: 10px 0 20px !important;
+        width: 100% !important;
+    }
+
+    .category-grid>* {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .category-grid .product-card-image,
+    .category-grid .shirt-img-wrap,
+    .category-grid [class*="img-wrap"],
+    .category-grid [class*="image-box"] {
+        max-height: 280px !important;
+        border-radius: 4px;
+    }
+}

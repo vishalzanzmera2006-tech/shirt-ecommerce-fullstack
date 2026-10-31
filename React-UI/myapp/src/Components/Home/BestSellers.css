@@ -1,0 +1,258 @@
+/* =========================================
+   BEST SELLERS SECTION
+========================================= */
+
+.best-sellers-section {
+    width: 100%;
+    padding: 80px 4%;
+    background: #f7f7f5;
+    color: #111;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Header */
+.best-sellers-header {
+    margin-bottom: 35px;
+}
+
+.best-sellers-title-area {
+    text-align: center;
+}
+
+.best-sellers-section-label {
+    display: block;
+    margin-bottom: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #777;
+}
+
+.best-sellers-title-area h2 {
+    margin: 0 0 10px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(32px, 4.5vw, 48px);
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    color: #111;
+}
+
+.best-sellers-title-area h2 span {
+    font-style: italic;
+}
+
+.best-sellers-subtitle {
+    margin: 0 auto;
+    max-width: 460px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #777;
+}
+
+/* Slider Controls */
+.best-sellers-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.best-sellers-slider-btn {
+    width: 44px;
+    height: 44px;
+    border: 1px solid #111;
+    border-radius: 50%;
+    background: transparent;
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.best-sellers-slider-btn:hover {
+    background: #111;
+    color: #fff;
+    transform: scale(1.06);
+}
+
+.best-sellers-slider-btn:active {
+    transform: scale(0.94);
+}
+
+/* Product Slider */
+.best-sellers-product-slider {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 15px;
+}
+
+.best-sellers-product-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Desktop Cards */
+.best-sellers-card-wrapper {
+    flex: 0 0 calc((100% - 72px) / 4);
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+.best-sellers-card-wrapper .product-card {
+    width: 100%;
+}
+
+/* =========================================
+   BLACK & WHITE ANIMATED VIEW MORE CTA BUTTON
+========================================= */
+
+.arrivals-viewmore-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 55px;
+    padding-bottom: 10px;
+}
+
+.arrivals-luxury-btn {
+    position: relative;
+    overflow: hidden;
+    height: 52px;
+    padding: 0 46px;
+    background: #000000;
+    color: #ffffff;
+    border: 1.5px solid #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-inner-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+    transition: color 0.4s ease;
+}
+
+.btn-tail-arrow {
+    color: #ffffff;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease;
+}
+
+/* Light Sweep Shimmer */
+.btn-glow-shimmer {
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    transform: skewX(-25deg);
+    transition: all 0.75s ease;
+    z-index: 1;
+}
+
+/* Hover Effect (Inverts to White background with Black text) */
+.arrivals-luxury-btn:hover {
+    background: #ffffff;
+    color: #000000;
+    border-color: #000000;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.arrivals-luxury-btn:hover .btn-inner-content {
+    color: #000000;
+}
+
+.arrivals-luxury-btn:hover .btn-tail-arrow {
+    color: #000000;
+    transform: translateX(6px);
+}
+
+.arrivals-luxury-btn:hover .btn-glow-shimmer {
+    left: 150%;
+}
+
+.arrivals-luxury-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .best-sellers-section {
+        padding: 70px 5%;
+    }
+
+    .best-sellers-card-wrapper {
+        flex: 0 0 calc((100% - 48px) / 3);
+    }
+}
+
+@media (max-width: 768px) {
+    .best-sellers-section {
+        padding: 60px 20px;
+    }
+
+    .best-sellers-controls {
+        display: none;
+    }
+
+    .best-sellers-product-slider {
+        gap: 16px;
+        padding-bottom: 20px;
+    }
+
+    .best-sellers-card-wrapper {
+        flex: 0 0 75%;
+    }
+
+    .arrivals-viewmore-box {
+        margin-top: 40px;
+    }
+
+    .arrivals-luxury-btn {
+        width: 88%;
+        height: 48px;
+        padding: 0 20px;
+    }
+
+    .btn-inner-content {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 400px) {
+    .best-sellers-card-wrapper {
+        flex: 0 0 82%;
+    }
+}

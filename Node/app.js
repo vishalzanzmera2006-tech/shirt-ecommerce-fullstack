@@ -27,8 +27,8 @@ var app = express();
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://crest-and-coller.vercel.app',              
-  'https://shirt-ecommerce-fullstack-rho.vercel.app' 
+  'https://crest-and-coller.vercel.app',
+  'https://shirt-admin-panel.vercel.app'
 ];
 
 app.use(cors({

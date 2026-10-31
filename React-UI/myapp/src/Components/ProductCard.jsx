@@ -103,7 +103,7 @@ const ProductCard = ({ product, badge, onQuickView }) => {
         setAdding(true);
         try {
             await axios.post(
-                "http://localhost:3000/cart/add",
+                "https://shirt-backend-33gt.onrender.com/cart/add",
                 {
                     productId: product._id,
                     quantity: 1,
@@ -112,7 +112,7 @@ const ProductCard = ({ product, badge, onQuickView }) => {
                 { headers: { token } }
             );
 
-            const res = await axios.get("http://localhost:3000/cart", {
+            const res = await axios.get("https://shirt-backend-33gt.onrender.com/cart", {
                 headers: { token },
             });
 
@@ -145,7 +145,7 @@ const ProductCard = ({ product, badge, onQuickView }) => {
 
         try {
             if (isWishlisted) {
-                await axios.delete("http://localhost:3000/wishlist/remove", {
+                await axios.delete("https://shirt-backend-33gt.onrender.com/wishlist/remove", {
                     headers: { token },
                     data: { productId: product._id },
                 });
@@ -155,7 +155,7 @@ const ProductCard = ({ product, badge, onQuickView }) => {
                 toast.success("Piece removed from wishlist");
             } else {
                 const res = await axios.post(
-                    "http://localhost:3000/wishlist/add",
+                    "https://shirt-backend-33gt.onrender.com/wishlist/add",
                     { productId: product._id },
                     { headers: { token } }
                 );
@@ -188,7 +188,7 @@ const ProductCard = ({ product, badge, onQuickView }) => {
             {/* Media Box */}
             <div className="product-card-image-box">
                 <img
-                    src={`http://localhost:3000/images/productimages/${activeImg || product.mainimage}`}
+                    src={`https://shirt-backend-33gt.onrender.com/images/productimages/${activeImg || product.mainimage}`}
                     alt={product.name || "Product"}
                     className="product-card-img"
                     loading="lazy"
@@ -251,7 +251,7 @@ const ProductCard = ({ product, badge, onQuickView }) => {
                                 aria-label={`Thumbnail ${idx + 1}`}
                             >
                                 <img
-                                    src={`http://localhost:3000/images/productimages/${img}`}
+                                    src={`https://shirt-backend-33gt.onrender.com/images/productimages/${img}`}
                                     alt=""
                                 />
                             </button>

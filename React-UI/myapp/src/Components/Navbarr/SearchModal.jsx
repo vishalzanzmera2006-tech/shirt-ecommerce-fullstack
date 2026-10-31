@@ -29,7 +29,7 @@ export default function SearchModal({ isOpen, onClose }) {
         const fetchAllStoreProducts = async () => {
             try {
                 setLoading(true);
-                const res = await axios.get("http://localhost:3000/shirt/showAll");
+                const res = await axios.get("https://shirt-backend-33gt.onrender.com/shirt/showAll");
                 const items = Array.isArray(res.data?.data)
                     ? res.data.data
                     : Array.isArray(res.data)
@@ -157,7 +157,7 @@ export default function SearchModal({ isOpen, onClose }) {
                                     >
                                         {coverImg ? (
                                             <img
-                                                src={`http://localhost:3000/images/productimages/${coverImg}`}
+                                                src={`https://shirt-backend-33gt.onrender.com/images/productimages/${coverImg}`}
                                                 alt={item.name}
                                                 className="result-thumb"
                                             />

@@ -42,7 +42,7 @@ const BestIn = () => {
             try {
                 setLoading(true);
                 const res = await axios.get(
-                    "http://localhost:3000/shirt/showAll"
+                    "https://shirt-backend-33gt.onrender.com/shirt/showAll"
                 );
 
                 const allItems = res.data?.data || [];

@@ -54,7 +54,7 @@ const AccountSettings = () => {
 
             // 1. Backend database update
             const res = await axios.put(
-                "http://localhost:3000/user/update-profile",
+                "https://shirt-backend-33gt.onrender.com/user/update-profile",
                 {
                     name: profile.name,
                     phone: profile.phone,

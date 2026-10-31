@@ -139,7 +139,7 @@ const QuickView = ({ product, onClose }) => {
 
     const currentImageName = images[currentImage];
     const imageUrl = currentImageName
-        ? `http://localhost:3000/images/productimages/${currentImageName}`
+        ? `https://shirt-backend-33gt.onrender.com/images/productimages/${currentImageName}`
         : "";
 
     // Image navigation handlers
@@ -180,7 +180,7 @@ const QuickView = ({ product, onClose }) => {
 
         try {
             await axios.post(
-                "http://localhost:3000/cart/add",
+                "https://shirt-backend-33gt.onrender.com/cart/add",
                 {
                     productId: product._id,
                     quantity: quantity,
@@ -195,7 +195,7 @@ const QuickView = ({ product, onClose }) => {
             );
 
             // Fetch refreshed cart list
-            const res = await axios.get("http://localhost:3000/cart", {
+            const res = await axios.get("https://shirt-backend-33gt.onrender.com/cart", {
                 headers: {
                     token: token,
                 },
@@ -299,7 +299,7 @@ const QuickView = ({ product, onClose }) => {
                                     onClick={() => setCurrentImage(index)}
                                 >
                                     <img
-                                        src={`http://localhost:3000/images/productimages/${image}`}
+                                        src={`https://shirt-backend-33gt.onrender.com/images/productimages/${image}`}
                                         alt={`Thumbnail ${index + 1}`}
                                     />
                                 </button>

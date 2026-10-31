@@ -41,7 +41,7 @@ const NewIn = () => {
         const fetchNewArrivals = async () => {
             try {
                 setLoading(true);
-                const res = await axios.get("http://localhost:3000/shirt/showAll");
+                const res = await axios.get("https://shirt-backend-33gt.onrender.com/shirt/showAll");
                 const allItems = res.data?.data || [];
 
                 // Filter new items or fallback to all

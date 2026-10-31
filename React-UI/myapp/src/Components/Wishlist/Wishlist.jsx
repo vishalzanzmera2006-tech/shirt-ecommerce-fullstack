@@ -33,7 +33,7 @@ const Wishlist = () => {
             }
 
             try {
-                const res = await axios.get("http://localhost:3000/wishlist", {
+                const res = await axios.get("https://shirt-backend-33gt.onrender.com/wishlist", {
                     headers: { token: token },
                 });
                 dispatch(setWishlist(res.data?.data || []));
@@ -59,7 +59,7 @@ const Wishlist = () => {
         if (!token) return;
 
         try {
-            await axios.delete("http://localhost:3000/wishlist/remove/", {
+            await axios.delete("https://shirt-backend-33gt.onrender.com/wishlist/remove/", {
                 headers: { token: token },
                 data: { productId: targetDeleteId },
             });
@@ -82,7 +82,7 @@ const Wishlist = () => {
         setMovingId(product._id);
         try {
             const res = await axios.post(
-                "http://localhost:3000/cart/add/",
+                "https://shirt-backend-33gt.onrender.com/cart/add/",
                 {
                     productId: product._id,
                     quantity: 1,
@@ -95,7 +95,7 @@ const Wishlist = () => {
             dispatch(removeWishlist(product._id));
             toast.success("Piece moved to your shopping bag");
 
-            await axios.delete("http://localhost:3000/wishlist/remove/", {
+            await axios.delete("https://shirt-backend-33gt.onrender.com/wishlist/remove/", {
                 headers: { token: token },
                 data: { productId: product._id },
             });
@@ -170,7 +170,7 @@ const Wishlist = () => {
                             <div className="cc-media-box">
                                 {coverImage ? (
                                     <img
-                                        src={`http://localhost:3000/images/productimages/${coverImage}`}
+                                        src={`https://shirt-backend-33gt.onrender.com/images/productimages/${coverImage}`}
                                         alt={product.name || "Shirt"}
                                         className="cc-product-img"
                                         loading="lazy"

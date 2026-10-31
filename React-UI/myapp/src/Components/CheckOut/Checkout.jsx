@@ -61,7 +61,7 @@ const Checkout = () => {
 
         try {
             const res = await axios.post(
-                "http://localhost:3000/order/create",
+                "https://shirt-backend-33gt.onrender.com/order/create",
                 {
                     items: cartItems,
                     ...shippingData,
@@ -77,7 +77,7 @@ const Checkout = () => {
 
             if (res.data.status === "Success" || res.status === 201) {
                 try {
-                    await axios.delete("http://localhost:3000/cart/clear", {
+                    await axios.delete("https://shirt-backend-33gt.onrender.com/cart/clear", {
                         headers: { token },
                     });
                 } catch (err) {
@@ -265,7 +265,7 @@ const Checkout = () => {
                                 return (
                                     <div key={idx} className="summary-item-row">
                                         <img
-                                            src={`http://localhost:3000/images/productimages/${product.mainimage}`}
+                                            src={`https://shirt-backend-33gt.onrender.com/images/productimages/${product.mainimage}`}
                                             alt={product.name}
                                             className="summary-thumb"
                                         />

@@ -119,7 +119,7 @@ const Navbar = () => {
     }
 
     try {
-      const res = await axios.get("http://localhost:3000/wishlist", {
+      const res = await axios.get("https://shirt-backend-33gt.onrender.com/wishlist", {
         headers: { token },
       });
       dispatch(setWishlist(res.data?.data || []));
@@ -139,7 +139,7 @@ const Navbar = () => {
     }
 
     try {
-      const res = await axios.get("http://localhost:3000/cart", {
+      const res = await axios.get("https://shirt-backend-33gt.onrender.com/cart", {
         headers: { token },
       });
       dispatch(setCart(res.data?.data || []));

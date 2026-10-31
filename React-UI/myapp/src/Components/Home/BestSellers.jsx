@@ -16,7 +16,7 @@ const BestSellers = () => {
     // Fetch Products
     useEffect(() => {
         axios
-            .get("http://localhost:3000/shirt/showAll")
+            .get("https://shirt-backend-33gt.onrender.com/shirt/showAll")
             .then((res) => {
                 const items = Array.isArray(res.data?.data)
                     ? res.data.data

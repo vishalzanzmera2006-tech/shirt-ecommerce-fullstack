@@ -54,7 +54,7 @@ export default function LoginPage() {
                         }}
                         onSubmit={async (values) => {
                             try {
-                                const res = await axios.post("http://localhost:3000/user/login", values);
+                                const res = await axios.post("https://shirt-backend-33gt.onrender.com/user/login", values);
 
                                 const token = res.data.token;
                                 const user = res.data.user;
@@ -63,7 +63,7 @@ export default function LoginPage() {
                                 localStorage.setItem("user", JSON.stringify(user));
 
                                 try {
-                                    const cartRes = await axios.get("http://localhost:3000/cart", {
+                                    const cartRes = await axios.get("https://shirt-backend-33gt.onrender.com/cart", {
                                         headers: { token: token },
                                     });
                                     dispatch(setCart(cartRes.data.data || []));

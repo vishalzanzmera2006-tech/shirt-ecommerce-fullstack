@@ -64,7 +64,7 @@ export default function SignupPage() {
                         onSubmit={async (values) => {
                             try {
                                 const res = await axios.post(
-                                    "http://localhost:3000/user/signup",
+                                    "https://shirt-backend-33gt.onrender.com/user/signup",
                                     values
                                 );
                                 localStorage.setItem("token", res.data.token);

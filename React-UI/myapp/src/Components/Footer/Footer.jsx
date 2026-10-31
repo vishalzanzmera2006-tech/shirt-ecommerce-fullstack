@@ -23,7 +23,7 @@ const Footer = () => {
         setLoading(true);
 
         try {
-            const res = await axios.post('http://localhost:3000/accessrequest/requestaccess', {
+            const res = await axios.post('https://shirt-backend-33gt.onrender.com/accessrequest/requestaccess', {
                 email: newsletterEmail.trim(),
             });
 

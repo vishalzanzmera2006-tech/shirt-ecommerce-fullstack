@@ -22,7 +22,7 @@ const NewArrivals = () => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:3000/shirt/showAll")
+            .get("https://shirt-backend-33gt.onrender.com/shirt/showAll")
             .then((res) => setData(res.data?.data || []))
             .catch((err) => {
                 console.error("New Arrivals Fetch Error:", err);

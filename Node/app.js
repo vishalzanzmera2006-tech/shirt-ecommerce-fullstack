@@ -24,7 +24,27 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.log("❌ Error:", err));
 
 var app = express();
-app.use(cors());
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://crest-and-coller.vercel.app',              
+  'https://shirt-ecommerce-fullstack-rho.vercel.app' 
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Blocked by CORS'));
+    }
+  },
+  credentials: true
+}));
+
+app.get('/', (req, res) => {
+  res.send('Shirt Website Backend is Live and Running!');
+});
 
 
 // view engine setup

@@ -23,7 +23,7 @@ const ShirtCategory = () => {
         const fetchShirts = async () => {
             try {
                 setLoading(true);
-                const res = await axios.get("http://localhost:3000/shirt/showAll");
+                const res = await axios.get("https://shirt-backend-33gt.onrender.com/shirt/showAll");
 
                 const list = Array.isArray(res.data?.data)
                     ? res.data.data

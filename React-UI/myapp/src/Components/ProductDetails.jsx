@@ -111,7 +111,7 @@ const ProductDetails = () => {
             if (!token) return;
 
             try {
-                const res = await axios.get("http://localhost:3000/wishlist", {
+                const res = await axios.get("https://shirt-backend-33gt.onrender.com/wishlist", {
                     headers: { token },
                 });
                 dispatch(setWishlist(res.data?.data || []));
@@ -132,7 +132,7 @@ const ProductDetails = () => {
                 setLoading(true);
 
                 const res = await axios.get(
-                    `http://localhost:3000/shirt/showOne?id=${id}`
+                    `https://shirt-backend-33gt.onrender.com/shirt/showOne?id=${id}`
                 );
 
                 const productData = res.data?.data;
@@ -174,7 +174,7 @@ const ProductDetails = () => {
         const fetchRelated = async () => {
             if (!product?.category) return;
             try {
-                const res = await axios.get("http://localhost:3000/shirt/showAll");
+                const res = await axios.get("https://shirt-backend-33gt.onrender.com/shirt/showAll");
                 const all = res.data?.data || [];
 
                 const filtered = all
@@ -216,7 +216,7 @@ const ProductDetails = () => {
 
         try {
             if (isWishlisted) {
-                await axios.delete("http://localhost:3000/wishlist/remove/", {
+                await axios.delete("https://shirt-backend-33gt.onrender.com/wishlist/remove/", {
                     headers: { token },
                     data: { productId: product._id },
                 });
@@ -225,7 +225,7 @@ const ProductDetails = () => {
                 toast.success("Piece removed from wishlist");
             } else {
                 const res = await axios.post(
-                    "http://localhost:3000/wishlist/add",
+                    "https://shirt-backend-33gt.onrender.com/wishlist/add",
                     { productId: product._id },
                     { headers: { token } }
                 );
@@ -274,7 +274,7 @@ const ProductDetails = () => {
             setCartLoading(true);
 
             const res = await axios.post(
-                "http://localhost:3000/cart/add",
+                "https://shirt-backend-33gt.onrender.com/cart/add",
                 {
                     productId: product._id,
                     quantity: quantity,
@@ -325,7 +325,7 @@ const ProductDetails = () => {
             setCartLoading(true);
 
             const res = await axios.post(
-                "http://localhost:3000/cart/add",
+                "https://shirt-backend-33gt.onrender.com/cart/add",
                 {
                     productId: product._id,
                     quantity: quantity,
@@ -427,7 +427,7 @@ const ProductDetails = () => {
         );
     }
 
-    const getImageUrl = (image) => `http://localhost:3000/images/productimages/${image}`;
+    const getImageUrl = (image) => `https://shirt-backend-33gt.onrender.com/images/productimages/${image}`;
 
     return (
         <section className="product-details-page">

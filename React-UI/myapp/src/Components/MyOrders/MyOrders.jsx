@@ -22,7 +22,7 @@ const MyOrders = () => {
 
         try {
             setLoading(true);
-            const res = await axios.get("http://localhost:3000/order/myorders", {
+            const res = await axios.get("https://shirt-backend-33gt.onrender.com/order/myorders", {
                 headers: { token },
             });
 
@@ -51,7 +51,7 @@ const MyOrders = () => {
             const token = localStorage.getItem("token");
 
             const res = await axios.put(
-                "http://localhost:3000/order/cancel",
+                "https://shirt-backend-33gt.onrender.com/order/cancel",
                 { orderId },
                 { headers: { token } }
             );
@@ -88,7 +88,7 @@ const MyOrders = () => {
             return imgName;
         }
 
-        return `http://localhost:3000/images/productimages/${imgName}`;
+        return `https://shirt-backend-33gt.onrender.com/images/productimages/${imgName}`;
     };
 
     if (loading) {

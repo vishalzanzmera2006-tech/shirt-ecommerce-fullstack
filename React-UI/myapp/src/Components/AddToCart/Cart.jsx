@@ -56,7 +56,7 @@ const Cart = () => {
             }
 
             try {
-                const res = await axios.get("http://localhost:3000/cart", {
+                const res = await axios.get("https://shirt-backend-33gt.onrender.com/cart", {
                     headers: { token: token },
                 });
                 dispatch(setCart(res.data.data || []));
@@ -77,7 +77,7 @@ const Cart = () => {
         const token = localStorage.getItem("token");
 
         try {
-            await axios.delete(`http://localhost:3000/cart/remove/${cartId}`, {
+            await axios.delete(`https://shirt-backend-33gt.onrender.com/cart/remove/${cartId}`, {
                 headers: { token: token },
             });
 
@@ -102,7 +102,7 @@ const Cart = () => {
 
         try {
             await axios.patch(
-                `http://localhost:3000/cart/update/${item.product._id}`,
+                `https://shirt-backend-33gt.onrender.com/cart/update/${item.product._id}`,
                 { quantity: newQty },
                 { headers: { token: token } }
             );
@@ -227,7 +227,7 @@ const Cart = () => {
                                     <div className="cart-thumbnail-box">
                                         {coverImage ? (
                                             <img
-                                                src={`http://localhost:3000/images/productimages/${coverImage}`}
+                                                src={`https://shirt-backend-33gt.onrender.com/images/productimages/${coverImage}`}
                                                 alt={product.name || "Shirt"}
                                                 className="cart-thumbnail-img"
                                                 loading="lazy"

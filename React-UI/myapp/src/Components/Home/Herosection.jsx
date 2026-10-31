@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import "./HeroSection.css";
+import "./Herosection.css";
 
 import heroImg1 from "../../assets/Carouselimg1.jpg";
 import heroImg2 from "../../assets/Carouselimg2.jpg";
@@ -61,6 +61,7 @@ const slides = [
 ];
 
 const HeroSection = () => {
+
   const [current, setCurrent] = useState(0);
   const navigate = useNavigate();
 

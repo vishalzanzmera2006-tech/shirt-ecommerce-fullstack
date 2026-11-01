@@ -12,7 +12,7 @@ const NewArrivals = () => {
     const [data, setData] = useState([]);
     const sliderRef = useRef(null);
 
-    // Selected Product for Quick View
+    // Selected Product for Quick ViewF
     const [selectedProduct, setSelectedProduct] = useState(null);
 
     // Filter new arrivals and limit to maximum 4 products
